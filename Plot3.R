@@ -27,7 +27,7 @@ epc <- read_epc()
 png(width = 480, height = 480, file = "plot3.png")
 
 with(epc, {
-    plot(datetime, Sub_metering_1, type = 'l', ylab = "Energy sub metering")
+    plot(datetime, Sub_metering_1, type = 'l', ylab = "Energy sub metering", xlab = "")
     lines(datetime, Sub_metering_2, col = 'red')
     lines(datetime, Sub_metering_3, col = 'blue')
     legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 

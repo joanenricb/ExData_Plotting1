@@ -28,18 +28,17 @@ epc <- read_epc()
 png(width = 480, height = 480, file = "plot4.png")
 
 par(mfrow = c(2,2))
-plot(epc$datetime, epc$Global_active_power, type = 'l', ylab = "Global Active Power (Kilowatts)", xlab = "")
+plot(epc$datetime, epc$Global_active_power, type = 'l', ylab = "Global Active Power", xlab = "")
 plot(epc$datetime, epc$Voltage, type = 'l', ylab = "Voltage", xlab = "datetime")
 
 with(epc, {
-    plot(datetime, Sub_metering_1, type = 'l', ylab = "Energy sub metering")
+    plot(datetime, Sub_metering_1, type = 'l', ylab = "Energy sub metering", xlab = "")
     lines(datetime, Sub_metering_2, col = 'red')
     lines(datetime, Sub_metering_3, col = 'blue')
     legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
-           col = c('black', 'red', 'blue'), lty = 1)
+           col = c('black', 'red', 'blue'), lty = 1, box.lwd = 0, bg = "transparent")
 })
 plot(epc$datetime, epc$Global_reactive_power, type = 'l', xlab = "datetime")
-
 
 
 dev.off()
